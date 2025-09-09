@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مزرعة أبو الذهب - أجواء ريفية ساحرة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    border: "var(--border)",
+                    ring: "var(--ring)",
+                }
+            }
+        }
+    };
+    </script>
+    <style>
+        :root {
+            --background: hsl(54 91% 95%);
+            --foreground: hsl(215 25% 27%);
+            --card: hsl(0 0% 100%);
+            --card-foreground: hsl(215 25% 27%);
+            --primary: hsl(142 76% 36%);
+            --primary-foreground: hsl(0 0% 100%);
+            --secondary: hsl(220 9% 46%);
+            --secondary-foreground: hsl(0 0% 100%);
+            --muted: hsl(210 40% 96%);
+            --muted-foreground: hsl(215 25% 27%);
+            --accent: hsl(48 96% 53%);
+            --accent-foreground: hsl(215 25% 27%);
+            --border: hsl(214 32% 91%);
+            --ring: hsl(142 76% 36%);
+            --radius: 0.5rem;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: hsl(215 25% 14%);
+                --foreground: hsl(210 40% 98%);
+                --card: hsl(215 25% 18%);
+                --card-foreground: hsl(210 40% 98%);
+                --primary: hsl(142 76% 36%);
+                --primary-foreground: hsl(0 0% 100%);
+                --secondary: hsl(220 9% 35%);
+                --secondary-foreground: hsl(0 0% 100%);
+                --muted: hsl(215 25% 18%);
+                --muted-foreground: hsl(210 40% 70%);
+                --accent: hsl(48 96% 53%);
+                --accent-foreground: hsl(215 25% 14%);
+                --border: hsl(215 25% 22%);
+                --ring: hsl(142 76% 36%);
+            }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            left: 40px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground scroll-smooth">
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/962788476051" target="_blank" class="whatsapp-float flex items-center justify-center">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.487"/>
+    </svg>
+</a>
+
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center text-white">
+    <!-- Hero background with farm landscape -->
+    <div class="absolute inset-0 hero-bg" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080'); background-size: cover; background-position: center;"></div>
+    
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 text-accent drop-shadow-2xl">
+            مزرعة أبو الذهب
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 drop-shadow-lg">
+            أجواء ريفية ساحرة – مثالية للعائلات والمجموعات
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contact" class="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105">
+                احجز الآن
+            </a>
+            <a href="tel:+962788476051" class="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105">
+                اتصل بنا
+            </a>
+        </div>
+    </div>
+    
+    <!-- Rating Badge -->
+    <div class="absolute top-8 right-8 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 text-foreground">
+        <div class="flex items-center gap-2">
+            <span class="text-yellow-500">★★★★★</span>
+            <span class="font-semibold">4.9</span>
+            <span class="text-sm text-muted-foreground">(23 تقييم)</span>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-16 bg-card">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-foreground mb-4">من نحن</h2>
+            <div class="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <!-- Beautiful farm exterior view -->
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                     alt="مزرعة أبو الذهب - منظر خارجي" 
+                     class="rounded-xl shadow-2xl w-full h-auto">
+            </div>
+            <div class="space-y-6">
+                <h3 class="text-2xl font-bold text-primary">مرحباً بكم في مزرعة أبو الذهب</h3>
+                <p class="text-lg text-muted-foreground leading-relaxed">
+                    تقع مزرعتنا في قلب محافظة الزرقاء في منطقة بلعما - الزيتونة، وتوفر تجربة ريفية لا تُنسى للعائلات والأصدقاء. نحن نفتخر بتقديم أجواء هادئة وطبيعية بعيداً عن صخب المدينة.
+                </p>
+                <p class="text-lg text-muted-foreground leading-relaxed">
+                    مزرعتنا مجهزة بكافة المرافق الحديثة مع الحفاظ على الطابع الريفي الأصيل، مما يجعلها المكان المثالي لقضاء أوقات ممتعة مع الأحباب.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-4 mt-8">
+                    <div class="bg-muted rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-primary">4.9</div>
+                        <div class="text-sm text-muted-foreground">تقييم العملاء</div>
+                    </div>
+                    <div class="bg-muted rounded-lg p-4 text-center">
+                        <div class="text-2xl font-bold text-primary">23</div>
+                        <div class="text-sm text-muted-foreground">مراجعة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Amenities Section -->
+<section id="amenities" class="py-16 bg-background">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-foreground mb-4">المرافق والخدمات</h2>
+            <div class="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Swimming Pool -->
+            <div class="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <!-- Swimming pool at a farm setting -->
+                <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                     alt="مسبح المزرعة" 
+                     class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold text-foreground mb-2">مسبح كبير ونظيف</h3>
+                <p class="text-muted-foreground">مسبح واسع ونظيف مع جلسات مريحة حوله للاستمتاع بأوقات السباحة</p>
+            </div>
+            
+            <!-- Outdoor Seating -->
+            <div class="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <!-- Outdoor seating area at farm -->
+                <img src="https://images.unsplash.com/photo-1519947486511-46149fa0a254?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                     alt="جلسات خارجية" 
+                     class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold text-foreground mb-2">جلسات خارجية مريحة</h3>
+                <p class="text-muted-foreground">جلسات داخلية وخارجية مصممة للاسترخاء والاستمتاع بالأجواء الريفية</p>
+            </div>
+            
+            <!-- BBQ Area -->
+            <div class="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <!-- BBQ area setup -->
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                     alt="منطقة الشواء" 
+                     class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold text-foreground mb-2">ركن الشواء والمنقل</h3>
+                <p class="text-muted-foreground">منطقة مجهزة بالكامل للشواء مع كافة المستلزمات اللازمة</p>
+            </div>
+            
+            <!-- Children's Playground -->
+            <div class="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <!-- Children playing in outdoor playground -->
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                     alt="ملعب الأطفال" 
+                     class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold text-foreground mb-2">بيت الأطفال والألعاب</h3>
+                <p class="text-muted-foreground">منطقة ألعاب آمنة ومجهزة للأطفال لقضاء أوقات ممتعة</p>
+            </div>
+            
+            <!-- Sports Activities -->
+            <div class="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <!-- Indoor games room -->
+                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                     alt="ألعاب رياضية" 
+                     class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold text-foreground mb-2">البلياردو وتنس الطاولة</h3>
+                <p class="text-muted-foreground">قاعة ألعاب مجهزة بطاولات البلياردو وتنس الطاولة</p>
+            </div>
+            
+            <!-- Garden Area -->
+            <div class="bg-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <!-- Beautiful garden area -->
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                     alt="منطقة الحديقة" 
+                     class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-bold text-foreground mb-2">حديقة واسعة وساحة</h3>
+                <p class="text-muted-foreground">مساحات خضراء واسعة للتنزه والاستمتاع بالطبيعة</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Customer Reviews -->
+<section class="py-16 bg-card">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-foreground mb-4">آراء عملائنا</h2>
+            <div class="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-background rounded-xl p-6 shadow-lg">
+                <div class="flex items-center mb-4">
+                    <div class="text-yellow-500 text-lg">★★★★★</div>
+                </div>
+                <p class="text-muted-foreground mb-4">"أروع مزرعة، واسعة ونظيفة وجديدة. فيها كل الأنشطة - ملعب، ساحة مجهزة بألعاب الأطفال، تنس طاولة، بلياردو، جلسات داخلية وخارجية، ركن شواء ومسبح كبير ونظيف."</p>
+                <div class="font-semibold text-foreground">نور أبو العينين</div>
+            </div>
+            
+            <div class="bg-background rounded-xl p-6 shadow-lg">
+                <div class="flex items-center mb-4">
+                    <div class="text-yellow-500 text-lg">★★★★★</div>
+                </div>
+                <p class="text-muted-foreground mb-4">"والله أحراجونا هؤلاء الرجال حرفياً. جوا جابوا حطب للمنقل، وبهارات، وزيت إلخ وعملولنا المنقل. باختصار ناس مؤدبين ومطعمين."</p>
+                <div class="font-semibold text-foreground">إياس عرموش</div>
+            </div>
+            
+            <div class="bg-background rounded-xl p-6 shadow-lg">
+                <div class="flex items-center mb-4">
+                    <div class="text-yellow-500 text-lg">★★★★★</div>
+                </div>
+                <p class="text-muted-foreground mb-4">"ماشاء الله اشي فخم ولا أروع الله يبارك لصاحبها"</p>
+                <div class="font-semibold text-foreground">عميل راضي</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking & Contact Section -->
+<section id="contact" class="py-16 bg-background">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-foreground mb-4">الحجز والتواصل</h2>
+            <div class="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-12">
+            <!-- Contact Info -->
+            <div class="space-y-8">
+                <div class="bg-card rounded-xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-foreground mb-6">ساعات الحجز</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between border-b border-border pb-4">
+                            <span class="font-semibold text-foreground">الفترة الصباحية</span>
+                            <span class="text-primary font-bold">9 صباحاً - 9 مساءً</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="font-semibold text-foreground">الفترة الليلية</span>
+                            <span class="text-primary font-bold">10 مساءً - 7 صباحاً</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-card rounded-xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-foreground mb-6">وسائل التواصل</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-primary rounded-full p-3">
+                                <svg class="w-6 h-6 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.57-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-foreground">رقم الهاتف</div>
+                                <a href="tel:+962788476051" class="text-primary text-lg font-bold hover:underline">+962 7 8847 6051</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="bg-green-500 rounded-full p-3">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.487"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-foreground">واتساب</div>
+                                <a href="https://wa.me/962788476051" target="_blank" class="text-green-600 font-bold hover:underline">احجز عبر الواتساب</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <a href="https://wa.me/962788476051" target="_blank" class="w-full bg-green-500 hover:bg-green-600 text-white py-4 px-6 rounded-lg font-semibold text-center block transition-colors">
+                            احجز الآن عبر الواتساب
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Location & Map -->
+            <div class="space-y-8">
+                <div class="bg-card rounded-xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-foreground mb-6">موقع المزرعة</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-primary rounded-full p-3">
+                                <svg class="w-6 h-6 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-foreground">العنوان</div>
+                                <p class="text-muted-foreground">الزرقاء - بلعما - منطقة الزيتونة</p>
+                                <p class="text-sm text-muted-foreground">بعد الهاشمية بـ 10 كم</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-card rounded-xl p-4 shadow-lg">
+                    <h3 class="text-xl font-bold text-foreground mb-4">الخريطة التفاعلية</h3>
+                    <div class="w-full h-64 rounded-lg overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.8!2d36.1560154!3d32.1929645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b77000ee65d5f%3A0xb184968fb4781683!2z2YXYstin2LHYudipINij2KjZiCDYp9mE2LDZh9io!5e0!3m2!1sen!2s!4v1703875200000!5m2!1sen!2s" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-lg">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-foreground text-background py-8">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center">
+            <h3 class="text-2xl font-bold text-accent mb-4">مزرعة أبو الذهب</h3>
+            <p class="text-muted-foreground mb-6">أجواء ريفية ساحرة في قلب الأردن</p>
+            
+            <div class="flex justify-center gap-6 mb-6">
+                <a href="tel:+962788476051" class="hover:text-accent transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.57-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                    </svg>
+                </a>
+                <a href="https://wa.me/962788476051" target="_blank" class="hover:text-accent transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.487"/>
+                    </svg>
+                </a>
+                <a href="https://maps.app.goo.gl/ciZcwatziuffUoaj9" target="_blank" class="hover:text-accent transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="border-t border-border pt-6">
+                <p class="text-sm text-muted-foreground">
+                    جميع الحقوق محفوظة © مزرعة أبو الذهب 2025
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function() {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Add animation on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.bg-card, .bg-background').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+})();
+</script>
+
+</body>
+</html>
